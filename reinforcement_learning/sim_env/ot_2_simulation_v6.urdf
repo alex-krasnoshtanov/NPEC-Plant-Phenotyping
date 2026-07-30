@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<robot name="ot_2_simulation_v6">
+
+<material name="silver">
+  <color rgba="0.700 0.700 0.700 1.000"/>
+</material>
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <mass value="68.1119463989402"/>
+    <inertia ixx="7.0141417545975795" iyy="5.985802412770951" izz="5.106927583996319" ixy="0.10228733956301146" iyz="-0.06957056825245576" ixz="-0.08354446854026595"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision concave="true">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gantry_x1">
+  <inertial>
+    <origin xyz="0.00692295475195798 -0.29499999999999993 -1.1102230246251565e-16" rpy="0 0 0"/>
+    <mass value="3.3869687995755164"/>
+    <inertia ixx="0.10780738605936546" iyy="0.003400199498102885" izz="0.10626279483092096" ixy="-4.1134713777812583e-17" iyz="8.255449301118393e-17" ixz="-2.7755575615628914e-17"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.295 -0.5375" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/gantry_x1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.295 -0.5375" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/gantry_x1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gantry_y1">
+  <inertial>
+    <origin xyz="0.06596333681295505 0.05957087008776929 -0.05072453723400938" rpy="0 0 0"/>
+    <mass value="3.3014835777313194"/>
+    <inertia ixx="0.04508715161738053" iyy="0.03741738402111017" izz="0.014155908322238009" ixy="-8.494578290435019e-05" iyz="-0.0003679798637509363" ixz="0.0007546307085106452"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.01 -0.0 -0.5375" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/gantry_y1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="-0.01 -0.0 -0.5375" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/gantry_y1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gantry_z1">
+  <inertial>
+    <origin xyz="0.3674999999999996 0.004411162683713804 -0.37067937324196953" rpy="0 0 0"/>
+    <mass value="12.263811195623957"/>
+    <inertia ixx="0.10134509689932147" iyy="0.09697411572187409" izz="0.011595676161899243" ixy="4.163336342344337e-17" iyz="0.0014757232895330485" ixz="-7.216449660063518e-16"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.295 -0.0665 -0.55" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/gantry_z1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0.295 -0.0665 -0.55" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/gantry_z1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Slider_3" type="prismatic">
+  <origin xyz="0.0 0.295 0.5375" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="gantry_x1"/>
+  <axis xyz="-1.0 -0.0 0.0"/>
+  <limit upper="0.26" lower="-0.18" effort="100" velocity="100"/>
+</joint>
+<transmission name="Slider_3_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Slider_3">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Slider_3_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<joint name="Slider_4" type="prismatic">
+  <origin xyz="0.01 -0.295 0.0" rpy="0 0 0"/>
+  <parent link="gantry_x1"/>
+  <child link="gantry_y1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="0.26" lower="-0.13" effort="100" velocity="100"/>
+</joint>
+<transmission name="Slider_4_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Slider_4">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Slider_4_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<joint name="Slider_5" type="prismatic">
+  <origin xyz="-0.305 0.0665 0.06" rpy="0 0 0"/>
+  <parent link="gantry_y1"/>
+  <child link="gantry_z1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="0.17" lower="0.05" effort="100" velocity="100"/>
+</joint>
+<transmission name="Slider_5_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Slider_5">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Slider_5_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

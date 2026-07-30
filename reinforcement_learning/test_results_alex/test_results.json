@@ -1,0 +1,145 @@
+{
+  "model": "260107.1230_alex_lr3e-4_b64_s2048_th5mm.zip",
+  "test_date": "2026-01-14 11:49:49",
+  "num_episodes": 10,
+  "target_threshold_mm": 5.0,
+  "max_steps": 300,
+  "results": {
+    "success_rate": "2/10 (20.0%)",
+    "success_count": 2,
+    "total_episodes": 10,
+    "success_percentage": 20.0,
+    "average_steps": 256.6,
+    "std_steps": 86.81,
+    "min_steps": 80,
+    "max_steps": 300,
+    "average_reward": -146.75,
+    "std_reward": 68.17,
+    "average_final_distance_mm": 14.873,
+    "std_final_distance_mm": 6.351,
+    "min_final_distance_mm": 4.729,
+    "max_final_distance_mm": 23.308
+  },
+  "episode_details": [
+    {
+      "episode": 1,
+      "goal": [
+        -0.12776048481464386,
+        -0.023622825741767883,
+        0.21985343098640442
+      ],
+      "steps": 300,
+      "reward": -234.1,
+      "final_distance_mm": 21.815,
+      "success": false
+    },
+    {
+      "episode": 2,
+      "goal": [
+        0.029715513810515404,
+        0.0704539492726326,
+        0.25998935103416443
+      ],
+      "steps": 300,
+      "reward": -130.25,
+      "final_distance_mm": 12.742,
+      "success": false
+    },
+    {
+      "episode": 3,
+      "goal": [
+        0.10311178117990494,
+        0.025929570198059082,
+        0.2288745790719986
+      ],
+      "steps": 300,
+      "reward": -124.57,
+      "final_distance_mm": 13.556,
+      "success": false
+    },
+    {
+      "episode": 4,
+      "goal": [
+        0.13821709156036377,
+        0.11638035625219345,
+        0.21886779367923737
+      ],
+      "steps": 80,
+      "reward": -17.81,
+      "final_distance_mm": 4.729,
+      "success": true
+    },
+    {
+      "episode": 5,
+      "goal": [
+        0.15190331637859344,
+        0.060419950634241104,
+        0.2229243665933609
+      ],
+      "steps": 300,
+      "reward": -126.62,
+      "final_distance_mm": 14.437,
+      "success": false
+    },
+    {
+      "episode": 6,
+      "goal": [
+        0.21861307322978973,
+        -0.04512341320514679,
+        0.18495874106884003
+      ],
+      "steps": 300,
+      "reward": -205.94,
+      "final_distance_mm": 23.308,
+      "success": false
+    },
+    {
+      "episode": 7,
+      "goal": [
+        0.04193797707557678,
+        0.00787876732647419,
+        0.18501204252243042
+      ],
+      "steps": 300,
+      "reward": -133.63,
+      "final_distance_mm": 19.275,
+      "success": false
+    },
+    {
+      "episode": 8,
+      "goal": [
+        -0.026358233764767647,
+        0.09645998477935791,
+        0.28676095604896545
+      ],
+      "steps": 86,
+      "reward": -60.72,
+      "final_distance_mm": 4.963,
+      "success": true
+    },
+    {
+      "episode": 9,
+      "goal": [
+        -0.12207018584012985,
+        -0.009570817463099957,
+        0.21089845895767212
+      ],
+      "steps": 300,
+      "reward": -224.86,
+      "final_distance_mm": 21.872,
+      "success": false
+    },
+    {
+      "episode": 10,
+      "goal": [
+        0.23095601797103882,
+        -0.029023220762610435,
+        0.2665523588657379
+      ],
+      "steps": 300,
+      "reward": -208.95,
+      "final_distance_mm": 12.037,
+      "success": false
+    }
+  ]
+}
