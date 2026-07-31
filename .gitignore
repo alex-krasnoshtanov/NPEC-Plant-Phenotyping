@@ -2,6 +2,15 @@ __pycache__/
 *.pyc
 .venv/
 .idea/
+.ipynb_checkpoints/
+
+# Model checkpoints (too large for GitHub; see integrated_system/model/README.md)
 *.pth
 *.ckpt
+
+# Secrets
 .env
+
+# Third-party NPEC plate images (large research data; supply your own)
+simulation/cloned/textures/_plates/*
+!simulation/cloned/textures/_plates/README.md

@@ -1,13 +1,25 @@
 [project]
-name = "2025-26b-fai2-adsai-oleksiikrasnoshtanov240247"
+name = "npec-plant-phenotyping"
 version = "0.1.0"
-description = "Add your description here"
+description = "Autonomous root-tip inoculation: U-Net root segmentation + OT-2 pipette control (PID and RL) in a PyBullet simulation."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
-    "ipykernel>=6.31.0",
-    "opencv-python",
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "segmentation-models-pytorch>=0.3.3",
+    "opencv-python>=4.8.0",
+    "albumentations>=1.3.1",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pillow>=10.0.0",
     "patchify==0.2.3",
-    "pillow>=11.3.0",
-    "tqdm>=4.67.1",
+    "matplotlib>=3.7.0",
+    "pandas>=2.0.0",
+    "tqdm>=4.65.0",
+    "pybullet>=3.2.5",
+    "gymnasium>=0.29.0",
+    "stable-baselines3>=2.0.0",
+    "imageio>=2.31.0",
+    "ipykernel>=6.25.0",
 ]
