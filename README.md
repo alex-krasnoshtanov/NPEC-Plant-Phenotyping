@@ -59,3 +59,12 @@ collaboratively; the wrapper is credited to **Aaron Ciuffo**. The individual
 exploration variant (`ot2_env_exploration.py`, `models/ppo_individual_5mm.zip`) is the
 author's own. The OT-2 PyBullet simulation under `simulation/cloned/` is provided
 NPEC/course scaffolding, included here so the pipeline is legible.
+
+## Licence
+
+[MIT](LICENSE), covering the work in this repository that is the author's own.
+
+Two things are **not** covered by it and are not relicensed here: the OT-2 PyBullet
+simulation under `simulation/cloned/`, which is NPEC/course scaffolding provided to
+the project, and the NPEC *Arabidopsis* plate images, which are third-party research
+data and are not redistributed at all. See Credits above.
